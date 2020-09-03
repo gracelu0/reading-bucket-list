@@ -15,12 +15,65 @@ p {
   font-size: small;
 }
 
+.header {
+  background-color: #ba7967;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+}
+
+#pageTitle {
+  float: left;
+  align-self: center;
+  margin-left: 15px;
+  color: white;
+  font-weight: 400;
+}
+
+#newBook {
+  float: right;
+  margin: 10px 20px 10px 0px;
+  font-size: medium;
+  font-family: "Lora", serif;
+}
+
+/* New book form */
+
+#newBookForm {
+  width: 300px;
+}
+
+label {
+  float: left;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  font-family: "Lora", serif;
+  resize: none;
+}
+
+input[type="text"]:focus {
+  border: 2px solid black;
+  outline: none;
+}
+
 .container {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   align-content: center;
   padding: 0px 100px 100px 100px;
+  margin-top: 90px;
 }
 
 .image {

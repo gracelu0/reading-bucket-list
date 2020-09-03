@@ -15,28 +15,28 @@
     <script src="library.js" async defer></script>
   </head>
   <body>
-    <div>
-      <h1>My Reading Bucket List</h1>
+    <div class="header">
+      <h1 id="pageTitle">My Reading Bucket List</h1>
+      <button id="newBook">Add a new book</button>
     </div>
+    <!-- <div id="pageTitle">
+      <h1>My Reading Bucket List</h1>
+    </div> -->
     <div class="container">
-      <div class="card">
-        <div class="image-container">
-          <img class="image" src="assets/becoming.jpg" />
-          <div class="overlay">
-            <div class="description">
-              Becoming is the memoir of former United States first lady Michelle
-              Obama published in 2018. Described by the author as a deeply
-              personal experience, the book talks about her roots and how she
-              found her voice, as well as her time in the White House, her
-              public health campaign, and her role as a mother.
-            </div>
-          </div>
-        </div>
-
-        <div class="bookInfo">
-          <h3>Becoming</h3>
-          <h4>by Michelle Obama</h4>
-          <h5>448 pages</h5>
+      <div class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Add a new book</h2>
+          <form id="newBookForm">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title">
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author">
+            <label for="pages">Page count:</label>
+            <input type="text" id="pages" name="pages">
+            <label for="description">Description:</label>
+          </form>
+          <textarea id="description" name="description" form="newBookForm" rows="4"></textarea>
         </div>
       </div>
       <div class="card">
@@ -59,6 +59,26 @@
           <h5>448 pages</h5>
         </div>
       </div>
+      <div class="card">
+        <div class="image-container">
+          <img class="image" src="assets/becoming.jpg" />
+          <div class="overlay">
+            <div class="description">
+              Becoming is the memoir of former United States first lady Michelle
+              Obama published in 2018. Described by the author as a deeply
+              personal experience, the book talks about her roots and how she
+              found her voice, as well as her time in the White House, her
+              public health campaign, and her role as a mother.
+            </div>
+          </div>
+        </div>
+
+        <div class="bookInfo">
+          <h3>Becoming</h3>
+          <h4>by Michelle Obama</h4>
+          <h5>448 pages</h5>
+        </div>
+      </div>
 
       <div class="card">
         <div class="image-container">
@@ -80,7 +100,7 @@
           <h5>448 pages</h5>
         </div>
       </div>
-      
+
       </div>
     </div>
 
