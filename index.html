@@ -96,7 +96,7 @@
         <a href="#">upgrade your browser</a> to improve your experience.
       </p>
     <![endif]-->
-    <div class="modal">
+    <div id="formModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Add a new book</h2>
@@ -109,9 +109,39 @@
           <input type="number" id="pages" name="pages" min="0">
           <label for="description">Description:</label>
           <textarea id="description" name="description" form="newBookForm" rows="4"></textarea>
+          <button type="submit">Add</button>
         </form>
         
       </div>
     </div>
+
+    <script>
+      //Get modal
+      var modal = document.getElementById("formModal");
+
+      //Get button that opens modal
+      var newBookButton = document.getElementById("newBookButton");
+
+      //Get <span> element that closes modal
+      var close = document.getElementsByClassName("close")[0];
+
+      //When user clickes the button, open modal for form
+      newBookButton.onclick = function() {
+        modal.style.display = "block";
+      }
+
+      //When user clicks X, close modal
+      close.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      //When user clicks outside of modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+    </script>
   </body>
 </html>
