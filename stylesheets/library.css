@@ -36,7 +36,7 @@ p {
   font-weight: 400;
 }
 
-#newBook {
+#newBookButton {
   float: right;
   margin: 10px 20px 10px 0px;
   font-size: medium;
@@ -54,6 +54,7 @@ label {
 }
 
 input[type="text"],
+input[type="number"],
 textarea {
   width: 100%;
   padding: 12px 20px;
@@ -62,7 +63,9 @@ textarea {
   resize: none;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
   border: 2px solid black;
   outline: none;
 }

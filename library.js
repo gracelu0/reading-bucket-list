@@ -1,11 +1,11 @@
 let myLibrary = [];
 
 //Constructor function for Book object
-function Book(title, author, pages, read, description) {
+function Book(title, author, pages, status, description) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.read = read;
+  this.status = status;
   this.description = description;
 
   // this.info = function () {
@@ -14,8 +14,8 @@ function Book(title, author, pages, read, description) {
 }
 
 //Create new Book object and push to myLibrary array
-function addBookToLibrary(title, author, pages, read, description) {
-  const newBook = new Book(title, author, pages, read, description);
+function addBookToLibrary(title, author, pages, status, description) {
+  const newBook = new Book(title, author, pages, status, description);
 
   myLibrary.push(newBook);
 }
