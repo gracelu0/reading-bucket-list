@@ -98,50 +98,32 @@
     <![endif]-->
     <div id="formModal" class="modal">
       <div class="modal-content">
-        <span class="close">&times;</span>
+        <div class="closeContainer">
+          <button type="button" class="close" aria-label="Close">
+            <span>&times;</span>
+          </button>
+        </div>
         <h2>Add a new book</h2>
-        <form id="newBookForm">
-          <label for="title">Title:</label>
-          <input type="text" id="title" name="title">
-          <label for="author">Author:</label>
-          <input type="text" id="author" name="author">
-          <label for="pages">Page count:</label>
-          <input type="number" id="pages" name="pages" min="0">
-          <label for="description">Description:</label>
-          <textarea id="description" name="description" form="newBookForm" rows="4"></textarea>
-          <button type="submit">Add</button>
-        </form>
+        <div id="newBookForm">
+          <form onsubmit="submitBookForm()" class="bookForm">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required aria-required="true">
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required aria-required="true">
+            <label for="pages">Page count:</label>
+            <input type="number" id="pages" name="pages" min="0" required aria-required="true">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" form="newBookForm" rows="3"></textarea>
+            <label for="coverImage">Cover image:</label>
+            <input type="file"/>
+            <input type="submit" id="addBookButton" value="Add book!"/>
+         </form>
+        </div>
+       
         
       </div>
     </div>
 
-    <script>
-      //Get modal
-      var modal = document.getElementById("formModal");
-
-      //Get button that opens modal
-      var newBookButton = document.getElementById("newBookButton");
-
-      //Get <span> element that closes modal
-      var close = document.getElementsByClassName("close")[0];
-
-      //When user clickes the button, open modal for form
-      newBookButton.onclick = function() {
-        modal.style.display = "block";
-      }
-
-      //When user clicks X, close modal
-      close.onclick = function() {
-        modal.style.display = "none";
-      }
-
-      //When user clicks outside of modal, close it
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      }
-
-    </script>
+   
   </body>
 </html>
