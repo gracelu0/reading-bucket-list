@@ -4,126 +4,132 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js">
-  <!--<![endif]-->
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Reading Bucket List</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/stylesheets/library.css" />
-    <script src="library.js" async defer></script>
-  </head>
-  <body>
-    <div class="header">
-      <h1 id="pageTitle">My Reading Bucket List</h1>
-      <button id="newBookButton">Add a new book</button>
-    </div>
-    <!-- <div id="pageTitle">
-      <h1>My Reading Bucket List</h1>
-    </div> -->
-    <div class="container">
-      
-      <div class="card">
-        <div class="image-container">
-          <img class="image" src="assets/becoming.jpg" />
-          <div class="overlay">
-            <div class="description">
-              Becoming is the memoir of former United States first lady Michelle
-              Obama published in 2018. Described by the author as a deeply
-              personal experience, the book talks about her roots and how she
-              found her voice, as well as her time in the White House, her
-              public health campaign, and her role as a mother.
-            </div>
-          </div>
-        </div>
+<!--<![endif]-->
 
-        <div class="bookInfo">
-          <h3>Becoming</h3>
-          <h4>by Michelle Obama</h4>
-          <h5>448 pages</h5>
-        </div>
-      </div>
-      <div class="card">
-        <div class="image-container">
-          <img class="image" src="assets/becoming.jpg" />
-          <div class="overlay">
-            <div class="description">
-              Becoming is the memoir of former United States first lady Michelle
-              Obama published in 2018. Described by the author as a deeply
-              personal experience, the book talks about her roots and how she
-              found her voice, as well as her time in the White House, her
-              public health campaign, and her role as a mother.
-            </div>
-          </div>
-        </div>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Reading Bucket List</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/stylesheets/library.css" />
 
-        <div class="bookInfo">
-          <h3>Becoming</h3>
-          <h4>by Michelle Obama</h4>
-          <h5>448 pages</h5>
-          <h6>Read</h6>
+  <script src="library.js" defer></script>
+</head>
+
+<body>
+  <div class="header">
+    <h1 id="pageTitle">My Reading Bucket List</h1>
+    <button id="newBookButton">Add a new book</button>
+  </div>
+  <div class="container">
+
+    <div class="card">
+      <div class="image-container">
+        <img class="image" src="assets/becoming.jpg" />
+        <div class="overlay">
+          <div class="description">
+            Becoming is the memoir of former United States first lady Michelle
+            Obama published in 2018. Described by the author as a deeply
+            personal experience, the book talks about her roots and how she
+            found her voice, as well as her time in the White House, her
+            public health campaign, and her role as a mother.
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="image-container">
-          <img class="image" src="assets/becoming.jpg" />
-          <div class="overlay">
-            <div class="description">
-              Becoming is the memoir of former United States first lady Michelle
-              Obama published in 2018. Described by the author as a deeply
-              personal experience, the book talks about her roots and how she
-              found her voice, as well as her time in the White House, her
-              public health campaign, and her role as a mother.
-            </div>
-          </div>
-        </div>
-
-        <div class="bookInfo">
-          <h3>Becoming</h3>
-          <h4>by Michelle Obama</h4>
-          <h5>448 pages</h5>
-        </div>
-      </div>
-
+      <div class="bookInfo">
+        <h3>Becoming</h3>
+        <h4>by Michelle Obama</h4>
+        <h5>448 pages</h5>
+        <h6>Read</h6>
       </div>
     </div>
 
-    <!--[if lt IE 7]>
+    <div class="card">
+      <div class="image-container">
+        <img class="image" src="assets/becoming.jpg" />
+        <div class="overlay">
+          <div class="description">
+            Becoming is the memoir of former United States first lady Michelle
+            Obama published in 2018. Described by the author as a deeply
+            personal experience, the book talks about her roots and how she
+            found her voice, as well as her time in the White House, her
+            public health campaign, and her role as a mother.
+          </div>
+        </div>
+      </div>
+
+      <div class="bookInfo">
+        <h3>Becoming</h3>
+        <h4>by Michelle Obama</h4>
+        <h5>448 pages</h5>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+  <!--[if lt IE 7]>
       <p class="browsehappy">
         You are using an <strong>outdated</strong> browser. Please
         <a href="#">upgrade your browser</a> to improve your experience.
       </p>
     <![endif]-->
-    <div id="formModal" class="modal">
-      <div class="modal-content">
-        <div class="closeContainer">
-          <button type="button" class="close" aria-label="Close">
-            <span>&times;</span>
-          </button>
-        </div>
-        <h2>Add a new book</h2>
-        <div id="newBookForm">
-          <form onsubmit="submitBookForm()" class="bookForm">
-            <label for="title">Title:</label>
-            <input type="text" id="title" name="title" required aria-required="true">
-            <label for="author">Author:</label>
-            <input type="text" id="author" name="author" required aria-required="true">
-            <label for="pages">Page count:</label>
-            <input type="number" id="pages" name="pages" min="0" required aria-required="true">
-            <label for="description">Description:</label>
-            <textarea id="description" name="description" form="newBookForm" rows="3"></textarea>
-            <label for="coverImage">Cover image:</label>
-            <input type="file"/>
-            <input type="submit" id="addBookButton" value="Add book!"/>
-         </form>
-        </div>
-       
-        
+  <div id="formModal" class="modal">
+    <div class="modal-content">
+      <div class="closeContainer">
+        <button type="button" class="close" aria-label="Close">
+          <span>&times;</span>
+        </button>
       </div>
-    </div>
+      <h2>Add a new book</h2>
+      <div id="newBookForm">
+        <form onsubmit="submitBookForm()" class="bookForm">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" required aria-required="true">
+          <label for="author">Author:</label>
+          <input type="text" id="author" name="author" required aria-required="true">
+          <label for="pages">Page count:</label>
+          <input type="number" id="pages" name="pages" min="0" required aria-required="true">
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" form="newBookForm" rows="3"></textarea>
+          <label for="coverImage">Cover image:</label>
+          <input type="file" />
+          <input type="submit" id="addBookButton" value="Add book!" />
+        </form>
+      </div>
 
-   
-  </body>
+
+    </div>
+  </div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+   https://firebase.google.com/docs/web/setup#available-libraries -->
+   <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyDoZqCIBGuZn_KGgOStyiBBvIca2Z8GCFM",
+      authDomain: "reading-bucket-list-b665c.firebaseapp.com",
+      databaseURL: "https://reading-bucket-list-b665c.firebaseio.com",
+      projectId: "reading-bucket-list-b665c",
+      storageBucket: "reading-bucket-list-b665c.appspot.com",
+      messagingSenderId: "809682691110",
+      appId: "1:809682691110:web:05bc957cbf677e390db2e7",
+      measurementId: "G-HWX0DZNKWT"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+  </script>
+</body>
+
 </html>

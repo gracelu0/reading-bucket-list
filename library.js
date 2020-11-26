@@ -1,3 +1,9 @@
+//Firebase setup
+
+console.log(firebase);
+
+//Global library array of book objects
+
 let myLibrary = [];
 
 //Container for library
@@ -31,6 +37,24 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
+
+firebase
+  .firestore()
+  .collection("books")
+  .onSnapshot((snapshot) => {
+    myLibrary = snapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+      // title: doc.title,
+      // author: doc.author,
+      // pages: doc.pages,
+      // status: doc.status,
+      // description: doc.description
+    }));
+    console.log("'Books' collection", myLibrary);
+    render(myLibrary);
+  });
+
 //Constructor function for Book object
 function Book(title, author, pages, status, description) {
   this.title = title;
@@ -126,13 +150,27 @@ function addBook(e) {
 
   let newBook = new Book(title, author, pageCount, false, description);
 
-  myLibrary.push(newBook);
+  firebase
+    .firestore()
+    .collection("books")
+    .add({
+      title: newBook.title,
+      author: newBook.author,
+      pages: newBook.pages,
+      status: newBook.status,
+      description: newBook.description,
+    })
+    .then((ref) => {
+      console.log("Added book with ID: ", ref.id);
+    });
+
+  //myLibrary.push(newBook);
   newBookForm.reset();
   descriptionBox.value = "";
   modal.style.display = "none";
   console.log(myLibrary.length);
 
-  render(myLibrary);
+  //render(myLibrary);
 
   // addBookToLibrary(title, author, pageCount, false, description);
 }
@@ -141,3 +179,6 @@ let addBookBtn = document.getElementById("addBookButton");
 addBookBtn.onclick = addBook;
 
 // render();
+
+console.log(myLibrary);
+// render(myLibrary);
